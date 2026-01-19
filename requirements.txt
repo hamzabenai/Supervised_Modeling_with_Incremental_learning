@@ -3,3 +3,4 @@ numpy
 river
 altair
 streamlit
+scikit-learn
