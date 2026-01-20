@@ -1,11 +1,11 @@
 # strategies/Clean.py
 from abc import ABC, abstractmethod
-from typing import List, Tuple, Dict, Any, Union
+from typing import List, Tuple
 import logging 
 import pandas as pd 
 import numpy as np
 from sklearn.decomposition import PCA
-from river import preprocessing, compose
+from river import preprocessing
 from sklearn.preprocessing import LabelEncoder
 
 
@@ -129,13 +129,11 @@ class StreamPreprocessingStrategy(StreamCleanClass):
 
   def learn_chunk(self, records):
     for x in records:
-      # All features are numeric after LabelEncoder
       self.scaler.learn_one(x)
 
   def transform_chunk(self, records):
     out = []
     for x in records:
-      # Transform all features (they're all numeric)
       x_proc = self.scaler.transform_one(x)
       out.append(dict(x_proc))
     return out

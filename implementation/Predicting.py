@@ -6,9 +6,7 @@ sys.path.append(str(project_root))
 
 import pandas as pd
 import logging
-from typing import Union
 from strategies.Predict import PredictStrategy
-from implementation.Ingesting import ingest_data
 
 def predict_data(data: pd.DataFrame, trained_model: object) -> pd.Series:
     

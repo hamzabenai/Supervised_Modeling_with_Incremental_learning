@@ -6,8 +6,8 @@ sys.path.append(str(project_root))
 
 import pandas as pd
 import logging
-from strategies.Clean import MissingValueStrategy, DimensionReductionStrategy, StreamPreprocessingStrategy, SplittingStrategy, RemoveOutliersStrategy, RemoveIdentifiersStrategy, EncodingStrategy
-from typing import List, Tuple, Union
+from strategies.Clean import MissingValueStrategy, RemoveOutliersStrategy, RemoveIdentifiersStrategy, EncodingStrategy
+from typing import List
 
 def basic_clean_data(data: pd.DataFrame, size: str, target: str, ids: List[str] = None):
     logger = logging.getLogger(__name__)

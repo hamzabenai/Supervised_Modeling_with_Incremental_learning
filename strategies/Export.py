@@ -1,7 +1,5 @@
 # strategies/Export.py
-import pandas as pd
 import logging
-from typing import Tuple, Union
 import pickle
 from abc import ABC, abstractmethod
 
@@ -13,8 +11,7 @@ class ExportStrategy(ABC):
     @abstractmethod
     def handle_export(self, model: object, file_path: str) -> None:
         pass
-      
-      
+
 class PickleExportStrategy(ExportStrategy):
     def __init__(self,model: object, logger: logging.Logger = None):
       super().__init__(logger)

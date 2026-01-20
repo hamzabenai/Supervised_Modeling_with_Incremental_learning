@@ -1,7 +1,7 @@
 # strategies/Ingest.py
 from abc import ABC, abstractmethod
 import pandas as pd
-from typing import Union, Dict, Any
+from typing import Union
 import logging
 
 

@@ -4,16 +4,12 @@ from pathlib import Path
 project_root = Path(__file__).parent.parent
 sys.path.append(str(project_root))
 
-
 import pandas as pd
 import logging
-from typing import Union
 from abc import ABC, abstractmethod
 from strategies.Clean import StreamPreprocessingStrategy
 from strategies.Evaluate import RegressionEvaluateStrategy, ClassificationEvaluateStrategy
 from river.base import Regressor, Classifier
-from river import preprocessing
-
 
 class TrainClass(ABC):
     def __init__(self, logger: logging.Logger = None):
@@ -22,7 +18,6 @@ class TrainClass(ABC):
     @abstractmethod
     def handle_train(self, data: pd.DataFrame) -> object:
         pass
-
 
 class TrainStrategy(TrainClass):
     def __init__(

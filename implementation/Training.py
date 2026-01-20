@@ -14,12 +14,8 @@ from implementation.Exporting import export_model
 
 def create_river_model(model_name: str, target: str):
     """Factory to create River models with a target attribute."""
-    if model_name == 'LinearRegression':
-        model = linear_model.LinearRegression(intercept_lr=0.1)
-    elif model_name == 'RandomForestRegressor':
+    if model_name == 'RandomForestRegressor':
         model = ensemble.AdaptiveRandomForestRegressor(seed=42, leaf_prediction= 'mean')
-    elif model_name == 'LogisticRegression':
-        model = linear_model.LogisticRegression()
     elif model_name == 'RandomForestClassifier':
         model = ensemble.AdaptiveRandomForestClassifier(seed=42)
     else:

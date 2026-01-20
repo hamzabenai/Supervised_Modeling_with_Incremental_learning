@@ -6,7 +6,7 @@ sys.path.append(str(project_root))
 
 import pandas as pd 
 import logging
-from typing import Union, Tuple
+from typing import Tuple
 from strategies.Ingest import IngestStrategy
 
 def ingest_data(source: str) -> Tuple[pd.DataFrame, str]:

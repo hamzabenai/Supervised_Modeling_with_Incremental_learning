@@ -16,7 +16,7 @@ class PredictStrategy(PredictClass):
     def __init__(self, trained_model: object, chunk_size: int = 100, logger: logging.Logger = None):
         super().__init__(logger)
         self.model = trained_model
-        self.chunk_size = chunk_size  # You can adjust chunk size as needed
+        self.chunk_size = chunk_size
 
     def handle_predict(self, X: pd.DataFrame) -> pd.Series:
         self.logger.info("Making predictions with River model...")
@@ -35,11 +35,7 @@ class PredictStrategy(PredictClass):
 
         for chunk in chunk_generator(X):
             X_chunk = chunk
-
-            # Convert ONCE
             X_records = X_chunk.to_dict(orient="records")
-
-            # Preprocessing (River-style)
             X_proc = preprocessor.transform_chunk(X_records)
 
             for x in X_proc:

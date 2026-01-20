@@ -12,7 +12,6 @@ from implementation.Ingesting import ingest_data
 import logging
 from typing import List
 import pandas as pd
-from pandas import Series
 import pickle
 
 
@@ -45,16 +44,21 @@ def predict_pipeline(data_source: str, trained_model_path: str, ids: List[str] =
 
 
 def train_more_pipeline(source: str, trained_model_path: str, buffer_path: str, target: str, ids: List[str] = None) -> float:
-    
+    # Ingest and Clean Data
     data, size = ingest_data(source)
     data, _= basic_clean_data(data, size, target, ids)
+    
+    # Load Trained Model and Buffer
     with open(trained_model_path, "rb") as f:
         trained_model = pickle.load(f)
     
     with open(buffer_path, "rb") as f:
         buffer = pickle.load(f)
 
+    # Retrain Model
     updated_model, score = retrain_model(data, trained_model, 500, buffer)
+    
+    # Export Updated Model
     export_model(updated_model, trained_model_path)
     logging.info(f"Updated model exported to {trained_model_path}")
     return score
