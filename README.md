@@ -104,17 +104,3 @@ This platform uses **incremental learning** (also known as online learning), whi
 ## 🤝 Contributing
 
 This is an open-source educational project. Contributions, issues, and feature requests are welcome!
-
-## 📚 Learn More
-
-- [River ML Documentation](https://riverml.xyz/)
-- [Streamlit Documentation](https://docs.streamlit.io/)
-- [Incremental Learning Concepts](https://en.wikipedia.org/wiki/Incremental_learning)
-
-## 📄 License
-
-MIT License - feel free to use this project for learning and development!
-
----
-
-**Built with ❤️ using River ML and Streamlit**
