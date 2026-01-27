@@ -1,15 +1,3 @@
----
-title: Incremental Learning Platform
-emoji: 🤖
-colorFrom: blue
-colorTo: green
-sdk: streamlit
-sdk_version: 1.28.0
-app_file: src/app.py
-pinned: false
-license: mit
----
-
 # 🤖 Incremental Learning Platform
 
 An interactive web platform for training, retraining, and deploying machine learning models with incremental learning capabilities powered by River ML.
