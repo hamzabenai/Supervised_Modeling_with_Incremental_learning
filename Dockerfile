@@ -11,4 +11,4 @@ RUN mkdir -p models
 EXPOSE 7860
 ENV STREAMLIT_SERVER_PORT=7860
 ENV STREAMLIT_SERVER_ADDRESS=0.0.0.0
-CMD ["streamlit", "run", "src/app.py", "--server.port=7860", "--server.address=0.0.0.0"]
+CMD ["streamlit", "run", "src/streamlit.py", "--server.port=7860", "--server.address=0.0.0.0"]
